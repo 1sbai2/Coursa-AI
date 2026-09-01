@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coursa AI</title>
+    <!-- External Asset Links -->
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <!-- Welcome Authorization Card -->
+    <div class="welcome-card" id="welcomeScreen">
+        <h1>Coursa Ai</h1>
+        <p class="subtitle">Coursa v1:1mb</p>
+        <input type="password" id="userAccessKey" placeholder="Entre ton code d'activation...">
+        <button class="portal-btn" onclick="maNouvelleConnexion()">INITIALISER LA SESSION ⚡</button>
+    </div>
+
+    <!-- Master UI Grid Hub Canvas -->
+    <div class="app-layout" id="chatScreen">
+        <div class="burger-overlay" id="burgerOverlay" onclick="toggleBurger(false)"></div>
+        
+        <!-- Sliding Burger Navigation Drawer System -->
+        <nav class="burger-drawer" id="burgerDrawer">
+            <div class="sidebar-section">
+                <h3>LISTE DES MATIÈRES</h3>
+                <button class="nav-item active" id="btn-pc" onclick="selectSubject('pc')">🧪 Physique - Chimie (PC)</button>
+                <button class="nav-item" id="btn-svt" onclick="selectSubject('svt')">🧬 Sciences Vie & Terre (SVT)</button>
+                <button class="nav-item" id="btn-math" onclick="selectSubject('math')">📐 Mathématiques (Math)</button>
+            </div>
+            <div class="user-badge">
+                <div class="user-avatar" id="avatarLetter">U</div>
+                <div class="user-meta">
+                    <span id="userEmailLabel">Clé Active</span>
+                    <span class="status-tag">NODE_ONLINE</span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Workspace Frame Component -->
+        <main class="chat-station">
+            <header class="station-header">
+                <div class="header-meta">
+                    <button class="burger-trigger" onclick="toggleBurger(true)">☰</button>
+                    <div>
+                        <h2>Console d'Apprentissage 3AC</h2>
+                        <p id="subjectIndicator">Matière active : PHYSIQUE - CHIMIE (PC)</p>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <button class="control-btn" onclick="location.reload()">Effacer</button>
+                    <button class="control-btn" onclick="location.reload()">Déconnexion</button>
+                </div>
+            </header>
+            
+            <div class="feed-viewport" id="chatBox">
+                <div class="log-bubble system-ai">Salam! Heureux de te voir sur Coursa AI. Quelle notion ou formule scientifique étudions-nous aujourd'hui ?</div>
+            </div>
+            
+            <footer class="station-input-dock">
+                <div class="dock-wrapper">
+                    <input type="text" id="userInput" placeholder="Demande une notion ou tape /resume pour voir le cours complet..." onkeypress="if(event.key==='Enter')sendMessage()">
+                    <button class="dock-send-btn" onclick="sendMessage()">➔</button>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Deferred Script Component Binding -->
+    <script src="/script.js"></script>
+</body>
+</html>
