@@ -41,7 +41,7 @@ async function sendMessage() {
     if(!val) return;
     creerBulle(val, "student-user");
     inp.value = "";
-    const wait = creerBulle("Syllaphly consulte les fiches scientifiques...", "system-ai");
+    const wait = creerBulle("Thinking.", "system-ai");
     const res = await fetch("/api/chat", { method:"POST", body: JSON.stringify({question: val, subject: currentSubject}) });
     const data = await res.json();
     wait.innerText = data.response;
